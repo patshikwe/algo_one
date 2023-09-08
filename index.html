@@ -5,16 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Algo n°1</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>Algo n°1</h1>
+    <div class="container">
+        <h1>Algo n°1</h1>
 
-    <div class="container-box">
-        <div class="box-one box"></div>
-        <div class="box-two box"></div>
+        <div class="container-box">
+            <div class="container-operators">
+                <h3>Choisir une opération</h3>
+                <input type="checkbox" class="checkbox" name="operators" id="addition" value="+">+&nbsp;
+                <input type="checkbox" class="checkbox" name="operators" id="multiplication" value="x">x&nbsp;
+                <input type="checkbox" class="checkbox" name="operators" id="substraction" value="-">-&nbsp;
+                <input type="checkbox" class="checkbox" name="operators" id="division" value=":">:&nbsp;
+            </div>
+
+            <div class="box-one box">
+                <input type="text" placeholder="Entrer un chiffre">&nbsp;
+                <div class="operatorDisplay"></div>&nbsp;
+                <input type="text" placeholder="Entrer un chiffre">
+            </div>
+            <div class="box-two box"></div>
+        </div>
     </div>
-
+    <script src="script.js"></script>
 </body>
 
 </html>
