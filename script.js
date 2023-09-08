@@ -5,7 +5,9 @@ const additionOperator = document.querySelector("#addition")
 const multiplicationOperator = document.querySelector("#multiplication")
 const substractionOperator = document.querySelector("#substraction")
 const divisionOperator = document.querySelector("#division")
+const equal = document.querySelector(".equal")
 const sum = document.querySelector(".box-two")
+const reset = document.querySelector(".reset")
 const addition = "+"
 const multiplication = "x"
 const substraction = "-"
@@ -20,16 +22,18 @@ for (let i = 0; i < operators.length; i++) {
 
             switch (eltOperators) {
                 case addition:
-                    console.log(eltOperators)
                     multiplicationOperator.checked = false
                     substractionOperator.checked = false
                     divisionOperator.checked = false
+
+
                     break;
                 case multiplication:
-                    console.log("x")
                     additionOperator.checked = false
                     substractionOperator.checked = false
                     divisionOperator.checked = false
+
+
                     break;
                 case substraction:
                     console.log("-")
@@ -38,10 +42,11 @@ for (let i = 0; i < operators.length; i++) {
                     divisionOperator.checked = false
                     break;
                 case division:
-                    console.log(":")
                     additionOperator.checked = false
                     multiplicationOperator.checked = false
                     substractionOperator.checked = false
+
+
                     break;
             }
         }
