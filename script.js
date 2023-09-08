@@ -5,13 +5,24 @@ const additionOperator = document.querySelector("#addition")
 const multiplicationOperator = document.querySelector("#multiplication")
 const substractionOperator = document.querySelector("#substraction")
 const divisionOperator = document.querySelector("#division")
+const inputNumberOne = document.querySelector("#inputNumberOne")
+const inputNumberTwo = document.querySelector("#inputNumberTwo")
 const equal = document.querySelector(".equal")
-const sum = document.querySelector(".box-two")
+const displaySum = document.querySelector(".box-two")
 const reset = document.querySelector(".reset")
 const addition = "+"
 const multiplication = "x"
 const substraction = "-"
 const division = ":"
+
+const additionFunction = () => {
+    const sum = Number(inputNumberOne.value) + Number(inputNumberTwo.value)
+    displaySum.innerHTML = sum
+}
+
+const multiplicationFunction = () => { }
+const substractionFunction = () => { }
+const divisionFunction = () => { }
 
 for (let i = 0; i < operators.length; i++) {
 
@@ -26,19 +37,28 @@ for (let i = 0; i < operators.length; i++) {
                     substractionOperator.checked = false
                     divisionOperator.checked = false
 
+                    if (inputNumberOne.value != "" & inputNumberTwo.value != "") {
+                        equal.classList.remove("dspl-none")
+                        equal.onclick = () => {
+                            additionFunction()
+                        }
+                    }
                     break;
+
                 case multiplication:
                     additionOperator.checked = false
                     substractionOperator.checked = false
                     divisionOperator.checked = false
 
                     break;
+
                 case substraction:
                     additionOperator.checked = false
                     multiplicationOperator.checked = false
                     divisionOperator.checked = false
 
                     break;
+
                 case division:
                     additionOperator.checked = false
                     multiplicationOperator.checked = false
