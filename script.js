@@ -26,26 +26,23 @@ for (let i = 0; i < operators.length; i++) {
                     substractionOperator.checked = false
                     divisionOperator.checked = false
 
-
                     break;
                 case multiplication:
                     additionOperator.checked = false
                     substractionOperator.checked = false
                     divisionOperator.checked = false
 
-
                     break;
                 case substraction:
-                    console.log("-")
                     additionOperator.checked = false
                     multiplicationOperator.checked = false
                     divisionOperator.checked = false
+
                     break;
                 case division:
                     additionOperator.checked = false
                     multiplicationOperator.checked = false
                     substractionOperator.checked = false
-
 
                     break;
             }
