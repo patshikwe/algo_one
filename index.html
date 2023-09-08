@@ -14,12 +14,31 @@
         <h1>Algo n°1</h1>
 
         <div class="container-box">
-            <div class="container-operators">
+            <div class="container-operators_title">
                 <h3>Choisir une opération</h3>
-                <input type="checkbox" class="checkbox" name="operators" id="addition" value="+">+&nbsp;
-                <input type="checkbox" class="checkbox" name="operators" id="multiplication" value="x">x&nbsp;
-                <input type="checkbox" class="checkbox" name="operators" id="substraction" value="-">-&nbsp;
-                <input type="checkbox" class="checkbox" name="operators" id="division" value=":">:&nbsp;
+
+                <div class="container-operators">
+                    <div class="container-addition">
+                        <input type="checkbox" class="checkbox" name="operators" id="addition" value="+">
+                        <label for="addition" title="addition">+</label>
+                    </div>
+
+                    <div class="container-mutiplication">
+                        <input type="checkbox" class="checkbox" name="operators" id="multiplication" value="x">
+                        <label for="multiplication" title="multiplication">x</label>
+                    </div>
+
+                    <div class="container-substraction">
+                        <input type="checkbox" class="checkbox" name="operators" id="substraction" value="-">
+                        <label for="substraction" title="Soustraction">-</label>
+                    </div>
+
+                    <div class="container-division">
+                        <input type="checkbox" class="checkbox" name="operators" id="division" value=":">
+                        <label for="division" title="division">:</label>
+                    </div>
+                </div>
+
             </div>
 
             <div class="box-one box">

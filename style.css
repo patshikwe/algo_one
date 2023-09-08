@@ -1,21 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Poppins', sans-serif;
+}
+
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 20px;
+    margin: 10px
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+.container-box {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(176, 224, 230);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgb(48, 46, 46);
 }
 
 .box-one {
     display: flex;
+    justify-content: space-around;
+}
+
+.box-one input {
+    width: 40%;
+}
+
+.box,
+.box input,
+button,
+.box+span {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.box input {
+    text-align: center;
 }
 
 .container-operators {
     margin-bottom: 10px;
+    display: flex;
 }
 
-.checkbox {
+.container-addition,
+.container-mutiplication,
+.container-substraction,
+.container-division {
+    display: flex;
+    align-items: center;
+    margin-right: 8px;
+}
+
+.container-addition label,
+.container-mutiplication label,
+.container-substraction label,
+.container-division label {
+    border: 1px solid black;
+    border: 0;
     border-radius: 50%;
+    box-shadow: 1px 1px 5px black;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: 600;
+    margin: 4px;
+    color: blue;
+    background-color: #fff;
+}
+
+.container-addition label:hover,
+.container-mutiplication label:hover,
+.container-substraction label:hover,
+.container-division label:hover {
+    background-color: rgb(208, 208, 208);
+    color: #000;
+    transition: 0.5s ease;
 }
 
 .dspl-none {
     display: none;
+}
+
+@media (max-width: 980px) {
+    .container-box {
+        width: 90%;
+    }
+}
+
+@media (max-width: 850px) {
+
+    .box,
+    .box input,
+    button,
+    .box+span {
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    .container-addition label,
+    .container-mutiplication label,
+    .container-substraction label,
+    .container-division label {
+        font-size: .8rem;
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .box,
+    .box input,
+    button,
+    .box+span {
+        font-size: .8rem;
+        font-weight: 600;
+    }
+}
+
+@media (max-width: 345px) {
+    .box-one {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .box-one input {
+        width: 90%;
+        font-size: 1.2rem;
+    }
+
+    .box-one .operatorDisplay {
+        font-size: 1.2rem;
+    }
 }
