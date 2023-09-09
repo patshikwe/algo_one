@@ -24,6 +24,36 @@ const multiplicationFunction = () => { }
 const substractionFunction = () => { }
 const divisionFunction = () => { }
 
+const checkDisplayButtonAndSum = () => {
+    inputNumberOne.addEventListener('change', () => {
+        if (inputNumberOne.value == "") {
+            equal.classList.add("dspl-none")
+            displaySum.classList.add("dspl-none")
+        }
+
+        if (inputNumberOne.value != "" && inputNumberTwo.value != ""
+            && operatorDisplay.innerHTML != "") {
+            equal.classList.remove("dspl-none")
+            displaySum.classList.remove("dspl-none")
+        }
+    })
+
+    inputNumberTwo.addEventListener('change', () => {
+        if (inputNumberTwo.value == "") {
+            equal.classList.add("dspl-none")
+            displaySum.classList.add("dspl-none")
+        }
+
+        if (inputNumberOne.value != "" && inputNumberTwo.value != ""
+            && operatorDisplay.innerHTML != "") {
+            equal.classList.remove("dspl-none")
+            displaySum.classList.remove("dspl-none")
+        }
+    })
+}
+checkDisplayButtonAndSum();
+
+
 for (let i = 0; i < operators.length; i++) {
 
     operators[i].onclick = () => {
@@ -37,6 +67,7 @@ for (let i = 0; i < operators.length; i++) {
                     substractionOperator.checked = false
                     divisionOperator.checked = false
 
+                    console.log(operatorDisplay.innerHTML)
                     if (inputNumberOne.value != "" & inputNumberTwo.value != "") {
                         equal.classList.remove("dspl-none")
                         equal.onclick = () => {
@@ -71,5 +102,6 @@ for (let i = 0; i < operators.length; i++) {
             operatorDisplay.innerHTML = ""
         }
     }
-
 }
+
+
