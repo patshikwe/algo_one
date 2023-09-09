@@ -30,7 +30,10 @@ const substractionOperation = () => {
     displaySum.innerHTML = sum
 }
 
-const divisionOperation = () => { }
+const divisionOperation = () => {
+    const sum = inputNumberOne.value / inputNumberTwo.value
+    displaySum.innerHTML = sum
+}
 
 const checkButtonAndSumDisplay = () => {
 
@@ -55,6 +58,9 @@ const checkButtonAndSumDisplay = () => {
                     break;
                 case substraction:
                     substractionOperation()
+                    break;
+                case division:
+                    divisionOperation()
                     break;
             }
         }
@@ -81,6 +87,9 @@ const checkButtonAndSumDisplay = () => {
                     break;
                 case substraction:
                     substractionOperation()
+                    break;
+                case division:
+                    divisionOperation()
                     break;
             }
         }
@@ -141,6 +150,12 @@ for (let i = 0; i < operators.length; i++) {
                     multiplicationOperator.checked = false
                     substractionOperator.checked = false
 
+                    if (inputNumberOne.value != "" & inputNumberTwo.value != "") {
+                        equal.classList.remove("dspl-none")
+                        equal.onclick = () => {
+                            divisionOperation()
+                        }
+                    }
                     break;
             }
         }
