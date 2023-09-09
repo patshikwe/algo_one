@@ -15,26 +15,41 @@ const multiplication = "x"
 const substraction = "-"
 const division = ":"
 
-const additionFunction = () => {
+const additionOperation = () => {
     const sum = Number(inputNumberOne.value) + Number(inputNumberTwo.value)
     displaySum.innerHTML = sum
 }
 
-const multiplicationFunction = () => { }
-const substractionFunction = () => { }
-const divisionFunction = () => { }
+const multiplicationOperation = () => {
+    const sum = inputNumberOne.value * inputNumberTwo.value
+    displaySum.innerHTML = sum
+}
 
-const checkDisplayButtonAndSum = () => {
+const substractionOperation = () => { }
+const divisionOperation = () => { }
+
+const checkButtonAndSumDisplay = () => {
+
     inputNumberOne.addEventListener('change', () => {
         if (inputNumberOne.value == "") {
             equal.classList.add("dspl-none")
             displaySum.classList.add("dspl-none")
         }
 
+        // Check button and sum display
         if (inputNumberOne.value != "" && inputNumberTwo.value != ""
             && operatorDisplay.innerHTML != "") {
             equal.classList.remove("dspl-none")
             displaySum.classList.remove("dspl-none")
+
+            switch (operatorDisplay.innerHTML) {
+                case addition:
+                    additionOperation()
+                    break;
+                case multiplication:
+                    multiplicationOperation()
+                    break;
+            }
         }
     })
 
@@ -44,14 +59,24 @@ const checkDisplayButtonAndSum = () => {
             displaySum.classList.add("dspl-none")
         }
 
+        // Check button and sum display
         if (inputNumberOne.value != "" && inputNumberTwo.value != ""
             && operatorDisplay.innerHTML != "") {
             equal.classList.remove("dspl-none")
             displaySum.classList.remove("dspl-none")
+
+            switch (operatorDisplay.innerHTML) {
+                case addition:
+                    additionOperation()
+                    break;
+                case multiplication:
+                    multiplicationOperation()
+                    break;
+            }
         }
     })
 }
-checkDisplayButtonAndSum();
+checkButtonAndSumDisplay();
 
 
 for (let i = 0; i < operators.length; i++) {
@@ -67,11 +92,10 @@ for (let i = 0; i < operators.length; i++) {
                     substractionOperator.checked = false
                     divisionOperator.checked = false
 
-                    console.log(operatorDisplay.innerHTML)
                     if (inputNumberOne.value != "" & inputNumberTwo.value != "") {
                         equal.classList.remove("dspl-none")
                         equal.onclick = () => {
-                            additionFunction()
+                            additionOperation()
                         }
                     }
                     break;
@@ -81,6 +105,12 @@ for (let i = 0; i < operators.length; i++) {
                     substractionOperator.checked = false
                     divisionOperator.checked = false
 
+                    if (inputNumberOne.value != "" & inputNumberTwo.value != "") {
+                        equal.classList.remove("dspl-none")
+                        equal.onclick = () => {
+                            multiplicationOperation()
+                        }
+                    }
                     break;
 
                 case substraction:
