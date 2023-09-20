@@ -41,6 +41,8 @@ const checkButtonAndSumDisplay = () => {
         if (inputNumberOne.value == "") {
             equal.classList.add("dspl-none")
             displaySum.classList.add("dspl-none")
+            resetDisplay()
+            console.log("resetDisplay() 1")
         }
 
         // Check button and sum display
@@ -70,6 +72,8 @@ const checkButtonAndSumDisplay = () => {
         if (inputNumberTwo.value == "") {
             equal.classList.add("dspl-none")
             displaySum.classList.add("dspl-none")
+            resetDisplay()
+            console.log("resetDisplay() 2")
         }
 
         // Check button and sum display
@@ -98,6 +102,25 @@ const checkButtonAndSumDisplay = () => {
 checkButtonAndSumDisplay();
 
 
+const resetDisplay = () => {
+    console.log(displaySum.innerHTML)
+
+    if (displaySum.classList.contains("dspl-none")
+        || inputNumberOne.value == "" || inputNumberTwo.value == "") {
+        console.log("Banane", displaySum.classList.contains("dspl-none"))
+        reset.classList.add("dspl-none")
+    }
+    else if (displaySum.classList.contains("dspl-none") === false
+        && inputNumberOne.value != "" && inputNumberTwo.value != "") {
+        console.log("Pomme", displaySum.classList.contains("dspl-none"))
+        reset.classList.remove("dspl-none")
+        reset.onclick = () => {
+            console.log("remove", displaySum.classList.contains("dspl-none"))
+        }
+    }
+}
+
+
 for (let i = 0; i < operators.length; i++) {
 
     operators[i].onclick = () => {
@@ -114,7 +137,9 @@ for (let i = 0; i < operators.length; i++) {
                     if (inputNumberOne.value != "" & inputNumberTwo.value != "") {
                         equal.classList.remove("dspl-none")
                         equal.onclick = () => {
+                            displaySum.classList.remove("dspl-none")
                             additionOperation()
+                            resetDisplay()
                         }
                     }
                     break;
@@ -127,7 +152,9 @@ for (let i = 0; i < operators.length; i++) {
                     if (inputNumberOne.value != "" & inputNumberTwo.value != "") {
                         equal.classList.remove("dspl-none")
                         equal.onclick = () => {
+                            displaySum.classList.remove("dspl-none")
                             multiplicationOperation()
+                            resetDisplay()
                         }
                     }
                     break;
@@ -140,7 +167,9 @@ for (let i = 0; i < operators.length; i++) {
                     if (inputNumberOne.value != "" & inputNumberTwo.value != "") {
                         equal.classList.remove("dspl-none")
                         equal.onclick = () => {
+                            displaySum.classList.remove("dspl-none")
                             substractionOperation()
+                            resetDisplay()
                         }
                     }
                     break;
@@ -153,7 +182,9 @@ for (let i = 0; i < operators.length; i++) {
                     if (inputNumberOne.value != "" & inputNumberTwo.value != "") {
                         equal.classList.remove("dspl-none")
                         equal.onclick = () => {
+                            displaySum.classList.remove("dspl-none")
                             divisionOperation()
+                            resetDisplay()
                         }
                     }
                     break;
@@ -164,5 +195,7 @@ for (let i = 0; i < operators.length; i++) {
         }
     }
 }
+
+// resetDisplay()
 
 
