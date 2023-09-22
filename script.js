@@ -41,8 +41,7 @@ const checkButtonAndSumDisplay = () => {
         if (inputNumberOne.value == "") {
             equal.classList.add("dspl-none")
             displaySum.classList.add("dspl-none")
-            resetDisplay()
-            console.log("resetDisplay() 1")
+            resetButtonDisplay()
         }
 
         // Check button and sum display
@@ -74,8 +73,7 @@ const checkButtonAndSumDisplay = () => {
         if (inputNumberTwo.value == "") {
             equal.classList.add("dspl-none")
             displaySum.classList.add("dspl-none")
-            resetDisplay()
-            console.log("resetDisplay() 2")
+            resetButtonDisplay()
         }
 
         // Check button and sum display
@@ -105,33 +103,28 @@ const checkButtonAndSumDisplay = () => {
 checkButtonAndSumDisplay();
 
 
-const resetDisplay = () => {
-    console.log(displaySum.innerHTML)
+const resetButtonDisplay = () => {
 
     if (displaySum.classList.contains("dspl-none")
         || inputNumberOne.value == "" || inputNumberTwo.value == "") {
-        console.log("Banane", displaySum.classList.contains("dspl-none"))
         reset.classList.add("dspl-none")
     }
     else if (displaySum.classList.contains("dspl-none") === false
         && inputNumberOne.value != "" && inputNumberTwo.value != "") {
-        console.log("Pomme", displaySum.classList.contains("dspl-none"))
         reset.classList.remove("dspl-none")
-        reset.onclick = () => {
-            console.log("remove", displaySum.classList.contains("dspl-none"))
-        }
     }
 }
 
 
+// Select Operator
 for (let i = 0; i < operators.length; i++) {
 
     operators[i].onclick = () => {
-        const eltOperators = operators[i].value
+        const eltOperator = operators[i].value
         if (operators[i].checked === true) {
-            operatorDisplay.innerHTML = eltOperators
+            operatorDisplay.innerHTML = eltOperator
 
-            switch (eltOperators) {
+            switch (eltOperator) {
                 case addition:
                     multiplicationOperator.checked = false
                     substractionOperator.checked = false
@@ -139,10 +132,11 @@ for (let i = 0; i < operators.length; i++) {
 
                     if (inputNumberOne.value != "" & inputNumberTwo.value != "") {
                         equal.classList.remove("dspl-none")
+
                         equal.onclick = () => {
                             displaySum.classList.remove("dspl-none")
                             additionOperation()
-                            resetDisplay()
+                            resetButtonDisplay()
                         }
                     }
                     break;
@@ -154,10 +148,11 @@ for (let i = 0; i < operators.length; i++) {
 
                     if (inputNumberOne.value != "" & inputNumberTwo.value != "") {
                         equal.classList.remove("dspl-none")
+
                         equal.onclick = () => {
                             displaySum.classList.remove("dspl-none")
                             multiplicationOperation()
-                            resetDisplay()
+                            resetButtonDisplay()
                         }
                     }
                     break;
@@ -169,10 +164,11 @@ for (let i = 0; i < operators.length; i++) {
 
                     if (inputNumberOne.value != "" & inputNumberTwo.value != "") {
                         equal.classList.remove("dspl-none")
+
                         equal.onclick = () => {
                             displaySum.classList.remove("dspl-none")
                             substractionOperation()
-                            resetDisplay()
+                            resetButtonDisplay()
                         }
                     }
                     break;
@@ -184,10 +180,11 @@ for (let i = 0; i < operators.length; i++) {
 
                     if (inputNumberOne.value != "" & inputNumberTwo.value != "") {
                         equal.classList.remove("dspl-none")
+
                         equal.onclick = () => {
                             displaySum.classList.remove("dspl-none")
                             divisionOperation()
-                            resetDisplay()
+                            resetButtonDisplay()
                         }
                     }
                     break;
@@ -199,6 +196,18 @@ for (let i = 0; i < operators.length; i++) {
     }
 }
 
-// resetDisplay()
+// Reset display
+reset.onclick = () => {
+    inputNumberOne.value = ""
+    inputNumberTwo.value = ""
 
+    operatorDisplay.innerHTML = ""
+
+    additionOperator.checked = false
+    multiplicationOperator.checked = false
+    substractionOperator.checked = false
+    divisionOperator.checked = false
+
+    displaySum.classList.add("dspl-none")
+}
 
