@@ -50,6 +50,8 @@ const checkButtonAndSumDisplay = () => {
             && operatorDisplay.innerHTML != "") {
             equal.classList.remove("dspl-none")
             displaySum.classList.remove("dspl-none")
+            reset.classList.remove("dspl-none")
+
 
             switch (operatorDisplay.innerHTML) {
                 case addition:
@@ -81,6 +83,7 @@ const checkButtonAndSumDisplay = () => {
             && operatorDisplay.innerHTML != "") {
             equal.classList.remove("dspl-none")
             displaySum.classList.remove("dspl-none")
+            reset.classList.remove("dspl-none")
 
             switch (operatorDisplay.innerHTML) {
                 case addition:
