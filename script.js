@@ -210,5 +210,6 @@ reset.onclick = () => {
 
     displaySum.classList.add("dspl-none")
     equal.classList.add("dspl-none")
+    reset.classList.add("dspl-none")
 }
 
